@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  background-color: #9ac2ef;
+  background-color: burlywood;
 }
 
 .index-body {
@@ -22,7 +22,7 @@ body {
   font-weight: bold;
   color: white;
   font-size: 5.6em;
-  margin: -450px 20px 0 20px;
+  margin: -430px 20px 0 20px;
 }
 
 .subheader {
@@ -99,7 +99,7 @@ form {
   justify-content: space-evenly;
   width: 20em;
   height: 50%;
-  background-color: #f6e7e7;
+  background-color: lightcoral;
   padding: 30px 40px 20px 40px;
   border-radius: 20px;
   color: #4b598e;
@@ -160,6 +160,7 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 ul > a {
@@ -177,6 +178,15 @@ ul > a {
 ul > a:hover {
   background-color: #4b598e;
   color: white;
+  margin: 100px;
+}
+
+ul li {
+    background-color: lightcoral;
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+    
 }
 
 .new-body {

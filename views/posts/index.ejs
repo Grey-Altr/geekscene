@@ -20,13 +20,7 @@
                 <a href="/users/<%= user._id %>/posts/<%= post._id %>">
                 <%= post.title %><br><%= post.post %><br><%= post.date %>
                 </a>
-                <form
-                  action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE"
-                  method="POST"
-                >
-                <button type="submit">Delete Post</button>
-                </form>
-                <br>
+                <p></p>
             </li>
             <% }) %>
           </ul>
