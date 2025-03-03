@@ -28,3 +28,6 @@ Geekscene is a web application designed to help users track their geeky interest
 - Enhance UI/UX with better design elements.
 - Improve database structure for scalability.
 
+![An image of the geekscene trello board](images/trelloboard.png)
+
+![An image of the geekscene schema](images/schema.png)
