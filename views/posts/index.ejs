@@ -3,26 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Geekscene</title>
   </head>
     <body>
         <%- include('../partials/nav.ejs') %>
-        <h1>Posts</h1>
-        <ul>
-          <% posts.forEach((post)=>{ %>
-            <li>
-              <a href="/users/<%= user._id %>/posts/<%= post._id %>">
-              <%= post.title %><br><%= post.post %><br><%= post.date %>
-              </a>
-              <form
-                action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE"
-                method="POST"
-              >
-              <button type="submit">Delete Post</button>
-              </form>
-              <br>
-          </li>
-          <% }) %>
-        </ul>
+        <div class="all-apps-body">
+            <div class="all-apps-header">
+            <h1>Posts</h1>
+            <a class="add-app-link" href="/users/<%=user._id%>/posts/new"
+              >Add a Post</a>
+          </div>
+          <ul>
+            <% posts.forEach((post)=>{ %>
+              <li>
+                <a href="/users/<%= user._id %>/posts/<%= post._id %>">
+                <%= post.title %><br><%= post.post %><br><%= post.date %>
+                </a>
+                <form
+                  action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE"
+                  method="POST"
+                >
+                <button type="submit">Delete Post</button>
+                </form>
+                <br>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
     </body>
 </html>
