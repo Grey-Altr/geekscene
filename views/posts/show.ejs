@@ -10,11 +10,14 @@
         <h1><%= post.title %></h1>
         <p>Post: <%= post.post %></p>
         <p>Date: <%= post.date %></p>
+        <a href="/users/<%= user._id %>/posts/<%= post._id %>/edit">
+            Edit this post
+        </a>
         <form
             action="/users/<%= user._id %>/posts/<%= post._id %>?_method=DELETE"
             method="POST"
         >
-            <button type="submit">Delete this post</button>
+            <button type="submit">Delete Post</button>
         </form>
     </body>
 </html>

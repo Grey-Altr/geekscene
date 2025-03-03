@@ -32,10 +32,48 @@ router.get("/:postId", async (req, res) => {
   }
 });
 
+router.get("/:postId/edit", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const post = currentUser.posts.id(req.params.postId);
+    res.render("posts/edit.ejs", {
+      post: post,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
 router.post("/", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     currentUser.posts.push(req.body);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/posts`);
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.put("/:postId", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const post = currentUser.posts.id(req.params.postId);
+    post.set(req.body);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/posts/${req.params.postId}`);
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
+router.delete("/:postId", async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.posts.id(req.params.postId).deleteOne();
     await currentUser.save();
     res.redirect(`/users/${currentUser._id}/posts`);
   } catch (error) {
